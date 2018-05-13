@@ -98,3 +98,11 @@ set_permissions() {
 # difficult for you to migrate your modules to newer template versions.
 # Make update-binary as clean as possible, try to only do function calls in it.
 
+# Edit the resolv conf file if it exist
+resolve_conf() {
+	if [ -a /system/etc/resolv.conf ]; then
+		mkdir -p $MODPATH/system/etc/
+		printf "nameserver 1.1.1.1\nnameserver 1.0.0.1" >> $MODPATH/system/etc/resolv.conf
+		touch $MODPATH/auto_mount
+	fi
+}
