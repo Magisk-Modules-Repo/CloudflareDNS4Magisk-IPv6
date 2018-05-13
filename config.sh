@@ -41,8 +41,8 @@ LATESTARTSERVICE=true
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "     CloudflareDNS4Magisk-Basic"
-  ui_print "        By Rom for Magisk v15+ "
+  ui_print "     CloudflareDNS4Magisk-IPv6"
+  ui_print "       By Rom for Magisk v15+ "
   ui_print "*******************************"
 }
 
