@@ -6,7 +6,7 @@ MODDIR=${0%/*}
 # This script will be executed in late_start service mode
 # More info in the main Magisk thread
 
-iptables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to-destination 1.1.1.1:53
-iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 1.0.0.1:53
-iptables -t nat -I OUTPUT -p tcp --dport 53 -j DNAT --to-destination 1.1.1.1:53
-iptables -t nat -I OUTPUT -p udp --dport 53 -j DNAT --to-destination 1.0.0.1:53
+ip6tables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to destination 2606:4700:4700::1111
+ip6tables -t nat -A OUTPUT -p tcp --dport 53 -j DNAT --to destination 2606:4700:4700::1001
+ip6tables -t nat -I OUTPUT -p tcp --dport 53 -j DNAT --to-destination 2606:4700:4700::1111
+ip6tables -t nat -I OUTPUT -p udp --dport 53 -j DNAT --to-destination 2606:4700:4700::1001
