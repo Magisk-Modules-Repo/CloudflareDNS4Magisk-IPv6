@@ -1,5 +1,5 @@
-id=CloudflareDNS4Magisk-IPv6
-name=CloudflareDNS4Magisk IPv6
+id=CloudflareDNS4Magisk-IPv4&6
+name=CloudflareDNS4Magisk IPv4&6
 version=v2.7
 versionCode=27
 author=Rom (Fixxxer's mod)
