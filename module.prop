@@ -1,6 +1,9 @@
-id=CloudflareDNS4Magisk-IPv6
-name=CloudflareDNS4Magisk IPv6
-version=v2.6
-versionCode=26
+id=CloudflareDNS4Magisk
+name=CloudflareDNS4Magisk
+version=v2.7
+versionCode=27
 author=Rom
-description=Using the new Cloudflare DNS by Magisk! As simple as that.
+description=Using the new Cloudflare DNS system-lessly! As simple as that.
+updateJson=https://raw.githubusercontent.com/xerta555/CloudflareDNS4Magisk-IPv6/master/Update.json
+support=https://forum.xda-developers.com/t/module-cloudflaredns4magisk.3772375/
+donate=https://www.paypal.com/paypalme/romfr
