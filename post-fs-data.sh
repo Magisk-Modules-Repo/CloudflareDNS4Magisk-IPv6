@@ -1,39 +1,21 @@
-#!/system/bin/sh
-# Please don't hardcode /magisk/modname/... ; instead, please use $MODDIR/...
-# This will make your scripts compatible even if Magisk change its mount point in the future
-MODDIR=${0%/*}
+# This file will be read by resetprop
+# Example: Change dpi
+# ro.sf.lcd_density=320
 
-# This script will be executed in post-fs-data mode
-# More info in the main Magisk thread
+resetprop -n net.eth0.dns1=2606:4700:4700::1111
+resetprop -n net.eth0.dns2=2606:4700:4700::1001
 
-# Set CF DNS servers address
-setprop net.eth0.dns1 1.1.1.1
-setprop net.eth0.dns2 1.0.0.1
+resetprop -n net.dns1=2606:4700:4700::1111
+resetprop -n net.dns2=2606:4700:4700::1001
 
-setprop net.dns1 1.1.1.1
-setprop net.dns2 1.0.0.1
+resetprop -n net.ppp0.dns1=2606:4700:4700::1111
+resetprop -n net.ppp0.dns2=2606:4700:4700::1001
 
-setprop net.ppp0.dns1 1.1.1.1
-setprop net.ppp0.dns2 1.0.0.1
+resetprop -n net.rmnet0.dns1=2606:4700:4700::1111
+resetprop -n net.rmnet0.dns2=2606:4700:4700::1001
 
-setprop net.rmnet0.dns1 1.1.1.1
-setprop net.rmnet0.dns2 1.0.0.1
+resetprop -n net.rmnet1.dns1=2606:4700:4700::1111
+resetprop -n net.rmnet1.dns2=2606:4700:4700::1001
 
-setprop net.rmnet1.dns1 1.1.1.1
-setprop net.rmnet1.dns2 1.0.0.1
-
-setprop net.pdpbr1.dns1 1.1.1.1
-setprop net.pdpbr1.dns2 1.0.0.1
-
-setprop 2606:4700:4700::1111
-setprop 2606:4700:4700::1001
-
-
-
-# Edit the resolv conf file if it exist
-
-if [ -a /system/etc/resolv.conf ]; then
-	mkdir -p $MODDIR/system/etc/
-	printf "nameserver 1.1.1.1\nnameserver 1.0.0.1" >> $MODDIR/system/etc/resolv.conf
-	chmod 644 $MODDIR/system/etc/resolv.conf
-fi
+resetprop -n net.pdpbr1.dns1=2606:4700:4700::1111
+resetprop -n net.pdpbr1.dns2=2606:4700:4700::1001
